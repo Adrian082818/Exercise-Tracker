@@ -1,0 +1,24 @@
+<%= form_for @exercise do |f| %>
+<%=render "flash" %>
+
+<div>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :sets %>
+<%= f.text_field :sets %>
+
+<%= f.label :reps %>
+<%= f.text_field :reps %>
+
+<%= f.label :weight %>
+<%= f.text_field :weight %>
+</div>
+
+<%= f.fields_for :coach do |coach_form| %>
+<%= coach_form.label :'Coach Name'%>
+<%=coach_form.text_field :name %>
+<%end%>
+
+<%= f.submit "Submit"%>
+<%end%>

@@ -1,0 +1,20 @@
+<h1>All your Exercises</h1>
+<%= link_to "Add Exercise", new_exercise_path %>
+<table class="striped resposive-table centered">
+<thead>
+<tr>
+<th>Coach<th>
+<th>Name<th>
+<th>Sets<th>
+<th>Reps<th>
+<th>Weight<th>
+</tr>
+</thead>
+
+<%= @exercises.each do |exercise| %>
+<a href="coaches/<%=exercise.coach.id%>/exercises"><%=exercise.coach.name%></a>
+<%= exercise.sets %>
+<%= exercise.reps %>
+<%= exercise.weight %>
+<%= link_to "Edit", exercise_path(exercise)%>
+<%end%>

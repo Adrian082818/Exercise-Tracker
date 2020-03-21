@@ -1,0 +1,11 @@
+<h2><%=@exercise.coach.name%></h2>
+
+<h4>Sets: <%=@exercise.sets%></h4>
+
+<h4>Reps: <%=@exercise.reps%></h4>
+
+<h4>Weight: <%=@exercise.weight%></h4>
+
+<%= link_to "Edit Exercise", edit_exercise_path(@exercise)%>
+<%= link_to "Delete an Exercise", exercise_path, method: :delete%>
+<%= link_to "Exercises", exercises_path%>
