@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
 
-    def welcome
+    def home
         if signed_in?
-            redirect_to '/exercises'
+            redirect_to ('/exercises')
+        end 
     end 
 end

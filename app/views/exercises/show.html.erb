@@ -1,11 +1,12 @@
-<h2><%=@exercise.coach.name%></h2>
+<div class="container">
+<h2>Exercise Name: <%=@exercise.name%></h2>
+<h3>Sets: <%=@exercise.sets%></h3>
+<h3>Reps: <%=@exercise.reps%></h3>
+<h3>Weight: <%=@exercise.weight%> lbs</h3>
+<h4>Coach: <%=@exercise.coach.name%></h4>
 
-<h4>Sets: <%=@exercise.sets%></h4>
-
-<h4>Reps: <%=@exercise.reps%></h4>
-
-<h4>Weight: <%=@exercise.weight%></h4>
 
 <%= link_to "Edit Exercise", edit_exercise_path(@exercise)%>
-<%= link_to "Delete an Exercise", exercise_path, method: :delete%>
+<%= link_to "Delete Exercise", exercise_path, method: :delete%>
 <%= link_to "Exercises", exercises_path%>
+</div>
