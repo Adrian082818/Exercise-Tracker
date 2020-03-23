@@ -1,5 +1,10 @@
 <%= form_for @exercise do |f| %>
 <%=render "flash" %>
+<div class="container center-align">
+<div class="row valign-wrapper">
+<div class="col s8 offset-s2 valign">
+<div class="card">
+<div class="card-content">
 
 <div class="field">
 <%= f.label :name %>
@@ -28,5 +33,12 @@
 <%end%>
 </div>
 
-<%= f.submit "Submit"%>
+<div class="card-action">
+<%= f.submit "Submit"%><br>
+      </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
 <%end%>
