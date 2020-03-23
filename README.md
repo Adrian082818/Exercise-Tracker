@@ -1,4 +1,5 @@
 # README
+This is a simple app that tracks your exercises. Users can create, read, update, and delete exercises. 
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
