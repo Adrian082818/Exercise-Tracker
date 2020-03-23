@@ -1,5 +1,5 @@
 class Exercise < ApplicationRecord
-    validates :name, presence: true, uniqueness: true 
+    validates :name, presence: true
     validates :sets, presence: true 
     validates :reps, presence: true 
     validates :weight, :numericality => true

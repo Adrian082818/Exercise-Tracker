@@ -12,10 +12,10 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {registrations: 'registrations', omniauth_callbacks: 'callbacks'}
   
   devise_scope :user do
-    get "/home", to: "devise/sessions#new"
-    post "users/sign_up", to: "devise/sessions#create"
-    # get 'login', to: 'devise/sessions#new'
-    # get 'signup', to: 'devise/registrations#new'
+    # get "/home", to: "devise/sessions#new"
+    # post "users/sign_up", to: "devise/sessions#create"
+    get 'login', to: 'devise/sessions#new'
+    get 'signup', to: 'devise/registrations#new'
   end
   
   resources :exercises, only: [:new, :create, :index, :show, :update, :destroy, :edit]
