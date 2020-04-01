@@ -1,2 +1,2 @@
-class CoachesController < ApplicationController
+class CoachesController < ApplicationController 
 end

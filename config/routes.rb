@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :exercises, only: [:new, :create, :index, :show, :update, :destroy, :edit]
 
   resources :coaches do 
-    resources :exercises, only: [:index, :show, :create]
+    resources :exercises, only: [:new, :index, :show, :edit]
   end 
 
 end

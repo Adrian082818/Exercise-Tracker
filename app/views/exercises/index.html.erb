@@ -1,6 +1,10 @@
 
 <h1>All your Exercises</h1>
+    <% if @coach %>
+<%= link_to "Add Exercise #{@coach.name}", new_coach_exercise_path %>
+<%else%>
 <%= link_to "Add Exercise", new_exercise_path %>
+<%end%>
 <table> 
  <thead>
    <tr>

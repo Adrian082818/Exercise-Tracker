@@ -16,8 +16,7 @@ end
 def new 
     @exercise = current_user.exercises.build
     @exercise.build_coach
-    # @exercise = Exercise.new 
-    # @coach = Coach.new 
+    @coach = Coach.find_by(id: params[:coach_id]) 
 end 
 
 def create
@@ -55,7 +54,7 @@ end
 private
 
 def exercise_params
-    params.require(:exercise).permit(:name, :sets, :reps, :weight, coach_attributes: [:id, :name])
+    params.require(:exercise).permit(:name, :sets, :reps, :weight, coach_attributes: [:name])
 end 
 
 end 

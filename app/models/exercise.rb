@@ -12,4 +12,5 @@ class Exercise < ApplicationRecord
     def coach_attributes=(coach_hash)
         self.coach = Coach.find_or_create_by(coach_hash)
     end 
+
 end
