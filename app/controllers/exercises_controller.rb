@@ -1,11 +1,12 @@
 class ExercisesController < ApplicationController 
 before_action :authenticate_user!
+before_action :get_coach
 
 def index 
     if params[:coach_id]
         @exercises = current_user.exercises.by_coach(params[:coach_id])
     else 
-        @exercises = current_user.exercises
+        @exercises = current_user.exercises 
     end 
 end 
 
@@ -16,7 +17,7 @@ end
 def new 
     @exercise = current_user.exercises.build
     @exercise.build_coach
-    @coach = Coach.find_by(id: params[:coach_id]) 
+    @coach = Coach.find_by(id: params[:coach_id])   
 end 
 
 def create
@@ -53,8 +54,12 @@ end
 
 private
 
-def exercise_params
-    params.require(:exercise).permit(:name, :sets, :reps, :weight, coach_attributes: [:name])
+def get_coach
+    @coach = Coach.find_by(id: params[:coach_id])
 end 
 
+
+def exercise_params
+    params.require(:exercise).permit(:name, :sets, :reps, :weight, :coach_id, coach_attributes: [:id, :name])
+end 
 end 

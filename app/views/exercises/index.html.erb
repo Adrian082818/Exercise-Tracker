@@ -1,7 +1,7 @@
 
 <h1>All your Exercises</h1>
     <% if @coach %>
-<%= link_to "Add Exercise #{@coach.name}", new_coach_exercise_path %>
+<%= link_to "Add Exercise for #{@coach.name}", new_coach_exercise_path(@coach.id) %>
 <%else%>
 <%= link_to "Add Exercise", new_exercise_path %>
 <%end%>
@@ -13,7 +13,6 @@
      <th>Reps</th>
      <th>Weight</th>
      <th>Coach</th>
-     <!-- <th colspan="3"></th> -->
    </tr>
 </thead>
 <tbody>

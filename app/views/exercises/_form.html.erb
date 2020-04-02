@@ -1,4 +1,4 @@
-<%= form_for @exercise do |f| %>
+<%= form_for exercise do |f| %>
 <%=render "flash" %>
 
 <div class="field">
@@ -21,10 +21,16 @@
 <%= f.text_field :weight %>
 </div>
 
+
 <div class="field">
-<%= f.fields_for :coach do |coach_form| %>
-<%= coach_form.label :'Coach Name'%>
-<%=coach_form.text_field :name %>
+<%if !coach %>
+    <%= f.fields_for :coach, Coach.new do |coach_form| %>
+        <%= coach_form.label :'Coach Name'%>
+        <%=coach_form.text_field :name %>
+    <%end%>
+<%else%>
+<%=f.hidden_field :coach_id, value: coach.id %> 
+<p>Coach: <%=coach.name%> </p>
 <%end%>
 </div>
 
