@@ -32,6 +32,7 @@ end
 
 def edit 
     @exercise = Exercise.find_by(id: params[:id])
+    @coach = Coach.find_by(id: params[:coach_id])
 end 
 
 def update 
